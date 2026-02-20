@@ -1,7 +1,7 @@
 ## Install additional apt packages
 sudo apt-get update && \
     sudo apt upgrade -y && \
-    sudo apt-get install -y dos2unix libsecret-1-0 xdg-utils fonts-naver-d2coding && \
+    sudo apt-get install -y dos2unix libsecret-1-0 xdg-utils zstd fonts-naver-d2coding && \
     sudo apt-get clean -y && \
     sudo rm -rf /var/lib/apt/lists/*
 
@@ -24,7 +24,7 @@ echo Install .NET AI templates
 dotnet new install Microsoft.Extensions.AI.Templates --force
 dotnet new install Microsoft.Agents.AI.ProjectTemplates --force
 
-# D2Coding Nerd Font
+## Install D2Coding Nerd Font
 echo Install D2Coding Nerd Font
 mkdir $HOME/.local
 mkdir $HOME/.local/share
@@ -33,13 +33,17 @@ wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/D2Coding.z
 unzip D2Coding.zip -d $HOME/.local/share/fonts
 rm D2Coding.zip
 
-## AZURE BICEP CLI ##
+## Install Azure Bicep CLI
 echo Install Azure Bicep CLI
 az bicep install
 
-## OH-MY-POSH ##
+## Install OH-MY-POSH
 echo Install oh-my-posh
 sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
 sudo chmod +x /usr/local/bin/oh-my-posh
+
+## Install Ollama
+echo Install Ollama
+curl -fsSL https://ollama.com/install.sh | sh
 
 echo DONE!
